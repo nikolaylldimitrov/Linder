@@ -1,0 +1,65 @@
+<%= form_with(model: profile, class: "contents") do |form| %>
+  <% if profile.errors.any? %>
+    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-md mt-3">
+      <h2><%= pluralize(profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
+
+      <ul class="list-disc ml-6">
+        <% profile.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="my-5">
+    <%= form.label :gender %>
+    <%= form.select :gender, {options:[["m","m"],["f","f"]]}%>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :matching_gender %>
+    <%# <%= form.text_field :matching_gender, class: ["block shadow rounded-md border outline-none px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": profile.errors[:matching_gender].none?, "border-red-400 focus:outline-red-600": profile.errors[:matching_gender].any?}] %> 
+ <%= form.select :matching_gender, {options:[["m","m"],["f","f"]]}%>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :city %>
+    <%= form.text_field :city, class: ["block shadow rounded-md border outline-none px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": profile.errors[:city].none?, "border-red-400 focus:outline-red-600": profile.errors[:city].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :age %>
+    <%= form.number_field :age, class: ["block shadow rounded-md border outline-none px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": profile.errors[:age].none?, "border-red-400 focus:outline-red-600": profile.errors[:age].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :matching_min_age %>
+    <%= form.number_field :matching_min_age, class: ["block shadow rounded-md border outline-none px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": profile.errors[:matching_min_age].none?, "border-red-400 focus:outline-red-600": profile.errors[:matching_min_age].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :matching_max_age %>
+    <%= form.number_field :matching_max_age, class: ["block shadow rounded-md border outline-none px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": profile.errors[:matching_max_age].none?, "border-red-400 focus:outline-red-600": profile.errors[:matching_max_age].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :image %>
+    <%= form.file_field :image, class: ["block shadow rounded-md border outline-none px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": profile.errors[:image].none?, "border-red-400 focus:outline-red-600": profile.errors[:image].any?}] %>
+  </div>
+
+ 
+
+  <div class="my-5">
+    <%= form.label :description %>
+    <%= form.textarea :description, rows: 4, class: ["block shadow rounded-md border outline-none px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": profile.errors[:description].none?, "border-red-400 focus:outline-red-600": profile.errors[:description].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :display_name %>
+    <%= form.text_field :display_name, class: ["block shadow rounded-md border outline-none px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": profile.errors[:display_name].none?, "border-red-400 focus:outline-red-600": profile.errors[:display_name].any?}] %>
+  </div>
+
+  <div class="inline">
+    <%= form.submit class: "rounded-md px-3.5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white inline-block font-medium cursor-pointer" %>
+  </div>
+<% end %>

@@ -1,0 +1,42 @@
+<div id="<%= dom_id profile %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Gender:</strong>
+    <%= profile.gender %>
+  </p>
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Matching gender:</strong>
+    <%= profile.matching_gender %>
+  </p>
+  <p class="my-5">
+    <strong class="block font-medium mb-1">City:</strong>
+    <%= profile.city %>
+  </p>
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Age:</strong>
+    <%= profile.age %>
+  </p>
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Matching min age:</strong>
+    <%= profile.matching_min_age %>
+  </p>
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Matching max age:</strong>
+    <%= profile.matching_max_age %>
+  </p>
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Image:</strong>
+    <%= link_to profile.image.filename, profile.image if profile.image.attached? %>
+  </p>
+  <p class="my-5">
+    <strong class="block font-medium mb-1">User:</strong>
+    <%= profile.user_id %>
+  </p>
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Description:</strong>
+    <%= profile.description %>
+  </p>
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Display name:</strong>
+    <%= profile.display_name %>
+  </p>
+</div>

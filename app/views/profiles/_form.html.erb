@@ -12,14 +12,14 @@
   <% end %>
 
   <div class="my-5">
-    <%= form.label :gender %>
-    <%= form.select :gender, {options:[["m","m"],["f","f"]]}%>
+    <%= form.label :gender, "Gender ⚥"%>
+    <%= form.select :gender, {options:[["Male ♂","m"],["Female ♀","f"]]}%>
   </div>
 
-  <div class="my-5">
-    <%= form.label :matching_gender %>
+  <div class="my-5">  
+    <%= form.label :matching_gender, "Matching gender ⚥" %>
     <%# <%= form.text_field :matching_gender, class: ["block shadow rounded-md border outline-none px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": profile.errors[:matching_gender].none?, "border-red-400 focus:outline-red-600": profile.errors[:matching_gender].any?}] %> 
- <%= form.select :matching_gender, {options:[["m","m"],["f","f"]]}%>
+ <%= form.select :matching_gender, {options:[["Male ♂","m"],["Female ♀","f"]]}%>
   </div>
 
   <div class="my-5">
